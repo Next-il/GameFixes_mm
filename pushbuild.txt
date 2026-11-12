@@ -22,3 +22,4 @@ New fix abstract_entity (on by default): entities whose class cannot be construc
 Unload safety for failed or partial loads (disabled fixes no longer leak hooks, null vtables refused), null-safe hook teardown, NetworkStateChanged slot scan limited to 16 bytes; built against s2sdk cb545fbe.
 workshop_voice removed: Valve fixed voice on workshop maps in the game.
 CS2 2026-11-11: rebuild against s2sdk 4e9010c8; pin Linux and Windows CI to the same SDK revision. Embedded signatures unchanged; live-server validation still required.
+GitHub Actions: build Linux and Windows packages for the November 11, 2026 SDK update.
