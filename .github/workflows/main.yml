@@ -149,6 +149,8 @@ jobs:
           New-Item -ItemType Directory -Path $SDK | Out-Null
 
           git clone --recursive --branch cs2 --single-branch https://github.com/Source2Mod/s2sdk $S2SDK
+          # Same SDK revision as the Linux build.
+          git -C $S2SDK checkout 4e9010c8efd5eb19287b62c93727e58f84d1701f
           git clone --branch master --single-branch https://github.com/Source2Mod/s2sdk-manifests $S2SDK_MANIFESTS
           git clone --recursive --branch master --single-branch https://github.com/Source2Mod/metamod-source $MMS
 

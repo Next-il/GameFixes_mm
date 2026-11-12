@@ -107,6 +107,15 @@ ambuild
 
 The package lands in `build/package/cs2/`; add `configs/addons/game_fixes/game_fixes.ini` next to it.
 
+## November 11, 2026 update build
+
+The build uses Source2Mod/s2sdk `4e9010c8efd5eb19287b62c93727e58f84d1701f`
+(`cs2` branch, November 11). Linux and Windows CI are pinned to this revision.
+For a matching local build, check out that revision in your SDK before configuring.
+This is an SDK rebuild; the embedded signatures are unchanged. Compilation does
+not validate signatures or hooks against the running game. Verify fix load logs
+and gameplay on a current CS2 server before deployment.
+
 ## Requirements
 
 * Metamod:Source (CS2)

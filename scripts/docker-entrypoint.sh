@@ -30,6 +30,8 @@ mkdir -p "$SDK_DIR"
 
 echo "=== Downloading s2sdk ==="
 git clone --recursive --branch cs2 --single-branch https://github.com/Source2Mod/s2sdk.git "$S2SDK_DIR"
+# SDK revision for the November 11, 2026 CS2 update.
+git -C "$S2SDK_DIR" checkout 4e9010c8efd5eb19287b62c93727e58f84d1701f
 
 echo "=== Downloading s2sdk-manifests ==="
 git clone --branch master --single-branch https://github.com/Source2Mod/s2sdk-manifests.git "$S2SDK_MANIFESTS_DIR"
