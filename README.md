@@ -97,7 +97,7 @@ cmake --build build
 
 `build/addons/` is the complete install tree (binary, `game_fixes.ini`, metamod `.vdf`); copy it into `game/csgo/`.
 
-AMBuild, what CI uses (`docker/` on Linux, MSVC on Windows), same as the other `*_mm` plugins:
+AMBuild, what CI uses (`docker/` on Linux; CI builds Linux only), same as the other `*_mm` plugins:
 
 ```
 mkdir build && cd build
@@ -111,7 +111,7 @@ The package lands in `build/package/cs2/`; add `configs/addons/game_fixes/game_f
 
 The build uses Source2Mod/s2sdk `1f0305215c991327b11a41315c2bb39096440b91`
 (`cs2` branch, upstream 14197 net messages) and Source2Mod/metamod-source
-`fa63fbd2cfab0e6b58b84baf68fd0e5bfacafbfc`. Linux and Windows CI are pinned to
+`fa63fbd2cfab0e6b58b84baf68fd0e5bfacafbfc`. Linux CI is pinned to
 both revisions. For a matching local build, check out those revisions before
 configuring.
 
