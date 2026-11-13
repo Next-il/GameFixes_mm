@@ -150,9 +150,12 @@ jobs:
 
           git clone --recursive --branch cs2 --single-branch https://github.com/Source2Mod/s2sdk $S2SDK
           # Same SDK revision as the Linux build.
-          git -C $S2SDK checkout 4e9010c8efd5eb19287b62c93727e58f84d1701f
+          git -C $S2SDK checkout 1f0305215c991327b11a41315c2bb39096440b91
           git clone --branch master --single-branch https://github.com/Source2Mod/s2sdk-manifests $S2SDK_MANIFESTS
           git clone --recursive --branch master --single-branch https://github.com/Source2Mod/metamod-source $MMS
+          # Same Metamod:Source revision as the Linux build.
+          git -C $MMS checkout fa63fbd2cfab0e6b58b84baf68fd0e5bfacafbfc
+          git -C $MMS submodule update --init --recursive
 
           $S2SDK_UNIX = $S2SDK.Replace("\", "/")
           $S2SDK_MANIFESTS_UNIX = $S2SDK_MANIFESTS.Replace("\", "/")

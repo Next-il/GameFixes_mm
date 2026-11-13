@@ -107,11 +107,19 @@ ambuild
 
 The package lands in `build/package/cs2/`; add `configs/addons/game_fixes/game_fixes.ini` next to it.
 
-## November 11, 2026 update build
+## CS2 14197 update build
 
-The build uses Source2Mod/s2sdk `4e9010c8efd5eb19287b62c93727e58f84d1701f`
-(`cs2` branch, November 11). Linux and Windows CI are pinned to this revision.
-For a matching local build, check out that revision in your SDK before configuring.
+The build uses Source2Mod/s2sdk `1f0305215c991327b11a41315c2bb39096440b91`
+(`cs2` branch, upstream 14197 net messages) and Source2Mod/metamod-source
+`fa63fbd2cfab0e6b58b84baf68fd0e5bfacafbfc`. Linux and Windows CI are pinned to
+both revisions. For a matching local build, check out those revisions before
+configuring.
+
+The binary targets Metamod:Source build 1473: its plugin API (PLAPI 18, ISmmAPI,
+KHook interfaces) is the same as at `fa63fbd2`. 1473's own source tree predates
+s2sdk support (`ISmmAPI.h` includes `eiface.h`, which s2sdk no longer has), so
+it cannot be built against directly.
+
 This is an SDK rebuild; the embedded signatures are unchanged. Compilation does
 not validate signatures or hooks against the running game. Verify fix load logs
 and gameplay on a current CS2 server before deployment.

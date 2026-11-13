@@ -23,3 +23,4 @@ Unload safety for failed or partial loads (disabled fixes no longer leak hooks, 
 workshop_voice removed: Valve fixed voice on workshop maps in the game.
 CS2 2026-11-11: rebuild against s2sdk 4e9010c8; pin Linux and Windows CI to the same SDK revision. Embedded signatures unchanged; live-server validation still required.
 GitHub Actions: build Linux and Windows packages for the November 11, 2026 SDK update.
+CS2 14197: rebuild against s2sdk 1f030521 (CNetMessage drops GetName, GetNetMessage returns NetMessageInfo_t) for Metamod:Source build 1473; Linux and Windows CI pin s2sdk and metamod-source fa63fbd2; AMBuild source list follows schemasystem_helper.cpp to src/sdk/. Embedded signatures unchanged; live-server validation still required.
