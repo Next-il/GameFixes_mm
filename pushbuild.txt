@@ -25,3 +25,4 @@ CS2 2026-11-11: rebuild against s2sdk 4e9010c8; pin Linux and Windows CI to the 
 GitHub Actions: build Linux and Windows packages for the November 11, 2026 SDK update.
 CS2 14197: rebuild against s2sdk 1f030521 (CNetMessage drops GetName, GetNetMessage returns NetMessageInfo_t) for Metamod:Source build 1473; Linux and Windows CI pin s2sdk and metamod-source fa63fbd2; AMBuild source list follows schemasystem_helper.cpp to src/sdk/. Embedded signatures unchanged; live-server validation still required.
 CS2 2026-11-24: rebuild against s2sdk da0741b7 (new ISource2Server virtual) and official Metamod:Source 2.0-dev build 1491 (c5cad5a2, matching KHook 0ca2b013). Network wrappers use the SDK SignonGroup_t instead of a duplicate local enum; group names follow the SDK ordering. Embedded signatures unchanged; live-server validation still required.
+Next-il fork: first build, same source as snaximuscs v1.0.1 (CS2 2026-11-24, s2sdk da0741b7, Metamod build 1491).
