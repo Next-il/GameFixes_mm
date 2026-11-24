@@ -8,8 +8,9 @@ name: Continuous Integration
 #     and the release job creates it once they pass;
 #   * run it by hand (workflow_dispatch) -- builds as a check, releases nothing.
 #
-# Pushes to main that leave pushbuild.txt alone stop at the version job,
-# which is a few seconds. Everything after it is gated on its outputs.
+# Pushes to main that leave pushbuild.txt alone still build on Linux as a
+# check, but get no tag, so the release job is skipped. Everything after the
+# version job is gated on its outputs.
 on:
   push:
     branches:
@@ -75,7 +76,8 @@ jobs:
           fi
 
           if ! printf '%s\n' "$changed" | grep -qx 'pushbuild.txt'; then
-            echo "pushbuild.txt untouched -- nothing to build."
+            echo "build=true" >> "$GITHUB_OUTPUT"
+            echo "pushbuild.txt untouched -- building without a release."
             exit 0
           fi
 
