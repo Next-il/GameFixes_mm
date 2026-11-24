@@ -30,17 +30,16 @@ mkdir -p "$SDK_DIR"
 
 echo "=== Downloading s2sdk ==="
 git clone --recursive --branch cs2 --single-branch https://github.com/Source2Mod/s2sdk.git "$S2SDK_DIR"
-# SDK revision for the CS2 14197 update.
-git -C "$S2SDK_DIR" checkout 1f0305215c991327b11a41315c2bb39096440b91
+# SDK revision for the November 24, 2026 CS2 update (ISource2Server vtable).
+git -C "$S2SDK_DIR" checkout da0741b76becbc9f63fd3142f892d225396b2132
 
 echo "=== Downloading s2sdk-manifests ==="
 git clone --branch master --single-branch https://github.com/Source2Mod/s2sdk-manifests.git "$S2SDK_MANIFESTS_DIR"
 
 echo "=== Downloading Metamod-Source ==="
-git clone --recursive --branch master --single-branch https://github.com/Source2Mod/metamod-source.git "$MMSOURCE_DIR"
-# Plugin API of Metamod:Source build 1473 (PLAPI 18, same ISmmAPI and KHook
-# interfaces); 1473's own headers predate s2sdk support and do not compile.
-git -C "$MMSOURCE_DIR" checkout fa63fbd2cfab0e6b58b84baf68fd0e5bfacafbfc
+git clone --recursive --branch master --single-branch https://github.com/alliedmodders/metamod-source.git "$MMSOURCE_DIR"
+# Metamod:Source 2.0-dev build 1491, including its matching KHook headers.
+git -C "$MMSOURCE_DIR" checkout c5cad5a2f8f132fe6fd4fb49ae9b7df7254db7c3
 git -C "$MMSOURCE_DIR" submodule update --init --recursive
 
 ### --- Export env vars for CMake ------------------------------------------

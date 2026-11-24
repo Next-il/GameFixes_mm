@@ -107,22 +107,24 @@ ambuild
 
 The package lands in `build/package/cs2/`; add `configs/addons/game_fixes/game_fixes.ini` next to it.
 
-## CS2 14197 update build
+## CS2 November 24, 2026 update / Metamod 1491
 
-The build uses Source2Mod/s2sdk `1f0305215c991327b11a41315c2bb39096440b91`
-(`cs2` branch, upstream 14197 net messages) and Source2Mod/metamod-source
-`fa63fbd2cfab0e6b58b84baf68fd0e5bfacafbfc`. Linux CI is pinned to
-both revisions. For a matching local build, check out those revisions before
-configuring.
+Linux CI pins Source2Mod/s2sdk `da0741b76becbc9f63fd3142f892d225396b2132`
+(`cs2` branch, including the new `ISource2Server` virtual before
+`WriteSignonMessages`) and alliedmodders/metamod-source
+`c5cad5a2f8f132fe6fd4fb49ae9b7df7254db7c3` (2.0-dev build 1491).
+Metamod's recursive submodule checkout supplies its matching KHook revision,
+`0ca2b01363aff9fa11ad73b1b08dfdc2a195fb3a`.
+For a matching local build, check out those revisions and initialize Metamod's
+submodules before configuring.
 
-The binary targets Metamod:Source build 1473: its plugin API (PLAPI 18, ISmmAPI,
-KHook interfaces) is the same as at `fa63fbd2`. 1473's own source tree predates
-s2sdk support (`ISmmAPI.h` includes `eiface.h`, which s2sdk no longer has), so
-it cannot be built against directly.
+The network message wrappers use the SDK's `SignonGroup_t` and
+`SIGNONGROUP_*` constants; the duplicate local enum has been removed.
 
-This is an SDK rebuild; the embedded signatures are unchanged. Compilation does
-not validate signatures or hooks against the running game. Verify fix load logs
-and gameplay on a current CS2 server before deployment.
+This is an SDK and hook-header rebuild; the embedded signatures are unchanged.
+Compilation does not validate signatures or hooks against the running game.
+Verify fix load logs and gameplay on a current CS2 server with Metamod 1491
+before deployment.
 
 ## Requirements
 
